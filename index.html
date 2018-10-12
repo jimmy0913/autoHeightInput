@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用div模拟输入自动换行的input</title>
+	<style>
+		
+		*{
+			font-size: 14px;
+			box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			color:#333;
+		}
+		
+		h3{
+			height: 30px;
+			line-height: 30px;
+			position: relative;
+			font-size: 16px;
+		}
+
+		.my_input{
+			position: relative;
+			border:1px solid rgb(206,206,206);
+			border-radius: 3px;
+			width: 260px;	
+			line-height: 26px;
+			min-height: 26px;
+			padding:0 8px;
+		}
+
+		.my_input:empty::before{
+			content:attr(data-msg);
+			position: absolute;
+			left: 8px;
+			color:#CCC;
+		}
+	</style>
+</head>
+<body>
+	
+	<h3>用div模拟的自动换行的文本框</h3>
+	<div data-msg="一起长大的约定..." class="my_input" contenteditable="true"></div>
+
+</body>
+</html>
